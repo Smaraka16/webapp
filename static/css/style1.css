@@ -1,0 +1,58 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#col {
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#col::before {
+    content: "";
+    background: rgba(46, 45, 45, 0.7) url('/static/images/Men.png')no-repeat center center/cover;
+    background-size: cover;
+    background-blend-mode: hard-light;
+    position: absolute;
+    z-index: -1;
+    height: 1000px;
+    width: 100%;
+    top: 0px;
+    left: 0px;
+    opacity: 0.7;
+}
+
+#col p {
+    font-size: 20px;
+    align-items: center;
+    padding-top: 94px;
+    color: black;
+    font-family: 'Bree Serif', serif;
+}
+
+#col h2 {
+    padding-top: 100px;
+    color: black;
+    font-family: 'Bree Serif', serif;
+}
+
+#col-1 {
+    text-align: center;
+    height: 500px;
+}
+
+#col-1 h2 {
+    padding-top: 80px;
+    font-family: 'Bree Serif', serif;
+    color: black;
+}
+
+#col-1 p {
+    font-size: 19px;
+    font-family: 'Bree Serif', serif;
+    color: black;
+    padding-top: 30px;
+}

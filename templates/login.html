@@ -1,0 +1,54 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{%static 'css/log.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhai+2&family=Bree+Serif&display=swap" rel="stylesheet">
+    <link rel="import" href="signin.html">
+    <link rel="import" href="index.html">
+    <title>welcome to online library</title>
+
+</head>
+
+<body>
+
+    <div class="sign_up_form">
+
+        <h1>Sign in Now</h1>
+        <form method="POST" action="/login">
+            {% csrf_token %}
+            <label for="username">Username</label>
+            <input type="text" class="input-box" name="username" id="username" placeholder="@username">
+            <label for="password">Password</label>
+            <input type="password" class="input-box" name="password" id="password" placeholder="password">
+            <p><span><input type="checkbox"></span>I agree to the terms and condition</p>
+            <button class="signin-btn">signin</button>
+            <hr>
+            <p class="or">OR</p>
+            <button type="button" class="twit-btn">Login with google</button>
+            <p>Don't have an account ?</p>
+            <a href="sign">signup</a>
+        </form>
+
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,161 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{%static 'css/style.css' %}">
+    <link rel="stylesheet" media="screen and (max-width:884px)" href="{%static 'css/phone.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhai+2&family=Bree+Serif&display=swap" rel="stylesheet">
+    <link rel="import" href="about.html">
+    <link rel="import" href="login.html">
+    <link rel="import" href="book.html">
+
+    <title>ONLINE LIBRARY</title>
+</head>
+
+<body>
+
+
+    <nav id="navbar">
+        <div id="logo">
+            <img src="{%static 'images/ns.jpg' %}" alt="logo">
+        </div>
+        <ul>
+            <li class="item"><a href="#home">Home</a></li>
+            <li class="item"><a href="#client-section">clients</a></li>
+            <li class="item"><a href="about.html">About</a></li>
+
+
+            <li class="item"><a href="#contact">contact</a></li>
+            <li class="item"><a href="logout">logout</a></li>
+        </ul>
+    </nav>
+
+
+
+
+    {% if messages %} {% for message in messages %}
+    <div class="alert alert-{{ message.tags }} alert-dismissible fade show px-10 py-10" role="alert">
+        <strong>{{ message }}</strong> .
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    {% endfor %} {% endif %}
+
+
+
+
+    <section id="home">
+        <h1 class="content">welcome to our library!</h1>
+        <p>"we provide you the best!"</p>
+        <p>your search for books end here.The best online library.we provide you world class books.</p>
+        <a href="book"><button class="btn">view library</button></a>
+    </section>
+
+    <section id="services-container">
+        <div class="center">
+            <h2>our services!</h2>
+        </div>
+
+
+        <div id="services">
+            <div class="box">
+                <img src="{%static 'images/smarak2.png' %}" alt="logo">
+                <h2 class="center">Agenda !</h2>
+                <p class="center">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sequi consectetur fugiat nesciunt rerum illum, quod ad labore id. Veniam ullam, ipsum molestias expedita corrupti, id officiis ipsam aspernatur, similique dolorum minima optio quas
+                    dicta.
+                </p>
+            </div>
+            <div class="box">
+                <img src="{%static 'images/ranjan3 (2).png' %}" alt="logo">
+                <h2 class="center">Books !</h2>
+                <p class="center">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sequi consectetur fugiat nesciunt rerum illum, quod ad labore id. Veniam ullam, ipsum molestias expedita corrupti, id officiis ipsam aspernatur, similique dolorum minima optio quas
+                    dicta.
+                </p>
+            </div>
+            <div class="box">
+                <img src="{%static 'images/ranjan2.png' %}" alt="logo">
+                <h2 class="center">Category !</h2>
+                <p class="center">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sequi consectetur fugiat nesciunt rerum illum, quod ad labore id. Veniam ullam, ipsum molestias expedita corrupti, id officiis ipsam aspernatur, similique dolorum minima optio quas
+                    dicta.
+                </p>
+            </div>
+        </div>
+
+
+
+    </section>
+
+
+
+
+    <section id="client-section">
+        <div class="center">
+            <h2>Our Clients!</h2>
+        </div>
+
+
+        <div id="clients">
+            <div class="client-item">
+                <img src="{% static 'images/images.png' %}" alt="client img">
+            </div>
+            <div class="client-item">
+                <img src="{%static 'images/download (2).png' %}" alt="client img">
+            </div>
+            <div class="client-item">
+                <img src="{%static 'images/download.png' %}" alt="client img">
+            </div>
+            <div class="client-item">
+                <img src="{%static 'images/sma.jpg' %}" alt="client img">
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+    <section id="contact">
+        <h2 class="center">contact us</h2>
+        <div id="contact-box">
+            <form method="POST" action="/contact">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="name">Name: </label>
+                    <input type="text" name="name" id="name" placeholder="Enter  your name">
+
+                </div>
+                <div class="form-group">
+                    <label for="name">email: </label>
+                    <input type="email" name="email" id="email" placeholder="Enter  your e-mail">
+
+                </div>
+                <div class="form-group">
+                    <label for="name">Phone: </label>
+                    <input type="phone" name="phone" id="phone" placeholder="Enter  your phone">
+
+                </div>
+                <div class="form-group">
+                    <label for="name">feedback: </label>
+                    <textarea name="message" id="message" cols="30" rows="10"></textarea>
+                </div>
+                <div class="center">
+                    <button class="btn btn-primary">submit</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="center">
+            copyright &copy; www.mylib.com All rights reserved!
+        </div>
+    </footer>
+
+</body>
+
+</html>
